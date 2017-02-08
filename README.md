@@ -12,4 +12,4 @@ Vragen of opmerkingen zijn altijd welkom. Je kan een issue aanmaken als je een p
 
 ## Licentie-informatie
 
-Dit werk valt onder de [Creative Commons Naamsvermelding-GelijkDelen 4.0 Internationale Publieke Licentie](http://creativecommons.org/licenses/by-sa/4.0/). Zie ook <LICENSE.md> voor meer info. De vormgeving is gebaseerd op [The Legrand Orange Book](http://www.latextemplates.com/template/the-legrand-orange-book) door Mathias Legrand.
+Dit werk valt onder de [Creative Commons Naamsvermelding-GelijkDelen 4.0 Internationale Publieke Licentie](http://creativecommons.org/licenses/by-sa/4.0/). Zie ook LICENSE.md voor meer info. De vormgeving is gebaseerd op [The Legrand Orange Book](http://www.latextemplates.com/template/the-legrand-orange-book) door Mathias Legrand.
