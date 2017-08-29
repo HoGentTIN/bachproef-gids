@@ -56,7 +56,7 @@ Om een goede keuze te maken begin je met het verzamelen van \emph{requirements},
   \end{itemize}
 \end{itemize}
 
-Als je het onderzoek doet voor een ``klant'' (= je co-promotor), dan betrek je uiteraard alle belanghebbenden bij dit proces! Je lijst de requirements op en verdeelt ze onder naar belangrijkheid, bijvoorbeeld via de MoSCoW-techniek~\parencite{Nordenstam2014}. Je verdeelt de requirements dan in categorieën zoals ``must-have'', ``should-have'' en ``nice-to-have''.
+Als je het onderzoek doet voor een ``klant'' (i.e. je co-promotor), dan betrek je uiteraard alle belanghebbenden bij dit proces! Je lijst de requirements op en verdeelt ze onder naar belangrijkheid, bijvoorbeeld via de MoSCoW-techniek~\parencite{Nordenstam2014}. Je verdeelt de requirements dan in categorieën zoals ``must-have'', ``should-have'' en ``nice-to-have''.
 
 \subsection{Long list}
 \label{ssec:long-list}
@@ -75,6 +75,25 @@ Tenslotte geef je je \emph{aanbeveling}, het alternatief dat het beste aansluit 
 
 \section{Experimenten opzetten}
 \label{sec:experimenten-opzetten}
+Reproduceerbaarheid is een van de pijlers van wetenschappelijk onderzoek. Dat betekent dat een experiment moet kunnen worden herhaald en dan dezelfde resultaten moet opleveren. Denk hierbij aan twee eigenschappen waaraan uw experiment moet voldoen:
+
+\begin{enumerate}
+	\item Reproduceerbaarheid: in staat zijn om een ​​experiment te herhalen zoals het werd uitgevoerd, bijvoorbeeld door data opnieuw te analyseren.
+	\item Replicabiliteit: een experiment vanaf het begin kunnen herhalen.
+	\item Herbruikbaarheid: het proces toepassen op een nieuwe maar soortgelijke vraag. Bijvoorbeeld voor een data analyse, toegepast op nieuwe gegevens.
+\end{enumerate}
+
+Een aantal tips om uw software experimenten goed te structuren zodat ze aan bovenstaande eigenschappen voldoen.
+
+\begin{description}
+	\item[Docker, containers en virtual machines] Je kan dergelijke technologieën gebruiken om uw experimenten in te laten draaien. Zo zijn uw experimenten repliceerbaar.
+	\item[Version control] Versiecontrole : als het wordt gebruikt met regelmatige commits, kan je terugkeren naar elk moment in de tijd. Dit is een cruciaal aspect  om te reproduceren wat je al een tijdje geleden hebt gedaan.
+	
+	Hint: gebruik een 'tag' om een ​​positie in de geschiedenis die je wilt herhalen, te pinpointen.
+	\item[Library] Maak van uw experiment een software library. Op die manier worden ook de analysestappen herbruikbaar gemaakt en is replicatie makkelijker. 
+	\item[Open datasets] Maak uw datasets die je gebruikt hebt beschikbaar en open. Ze definiëren ook een standaard experiment, waardoor een bredere wetenschappelijke gemeenschap de vragen begrijpt die je onderzoekt.
+\end{description}
+
 
 % TODO
 % Belangrijk: reproduceerbaar aan de hand van de beschrijving
@@ -84,7 +103,7 @@ Tenslotte geef je je \emph{aanbeveling}, het alternatief dat het beste aansluit 
 
 \section{Cijfermateriaal rapporteren}
 \label{sec:cijfermateriaal}
-
+Dit onderdeel van de gids is nog onder constructie. We refereren u daarvoor naar de cursus onderzoekstechnieken.
 % TODO
 % vb. performantievergelijking
 % - vergelijk je de juiste dingen? Zijn neveneffecten uitgeschakeld?
