@@ -57,23 +57,31 @@ Na installeren pas je best volgende instellingen aan:
 \section{Versiebeheersysteem}
 \label{sec:versiebeheersysteem}
 
-Aan een informaticus hoeven hopelijk de voordelen van een versiebeheersysteem niet uitgelegd te worden?
-% Gebruik een versiebeheersysteem zoals Git
-% -> Github of Bitbucket om remote een
-% Wat komt in Git:
-% - LaTeX, BibTeX broncode
-% - eventueel belangrijke versies PDF
-% - Resultaten experimenten (tekstformaat, bv CSV), transcripties interviews, enz. ALLE artefacten van je onderzoek!
-% - Broncode van zelf geschreven benchmarks, experimenten, proof-of-conceptcode, enz.
-% - werkdocumenten waar je opmaak nodig hebt, maar die niet dienen voor je bachproef (en waarvoor LaTeX overkill is: Markdown!
-% - Afbeeldingen die in de tekst zullen komen
-%
-% Wat komt NIET in Git
-% - Hulpbestanden aangemaakt bij het compileren van LaTeX
-% - Grote bestanden zoals ISO's, VMs, \ldots
-% - PDFs van gelezen artikels/ebooks
-% - Binaire bestanden die vaak veranderen
-% - Bestanden automatisch gegenereerd uit code in Git (bv. gecompileerde code)
+Aan een informaticus hoeven hopelijk de voordelen van een versiebeheersysteem niet uitgelegd te worden? Gebruik altijd een versiebeheersysteem zoals Git om je werk bij te houden. Creëer ook een Github repository. Dit is enerzijds een goed backupsysteem (mits je regelmatig synchroniseert met Github), en anderzijds laat het je toe om je werk te delen met je promotor. Eén van de eigenschappen van een versiebeheer is dat het bij uitstek ontworpen is om wijzigingen in \emph{tekstbestanden} op te volgen. Binaire bestandsformaten zoals documenten van een klassieke tekstverwerker zijn hiervoor niet geschikt, wat een extra motivatie is voor het gebruik van \LaTeX{}.
+
+Volgende zaken horen zeker thuis in je repository:
+
+\begin{itemize}
+  \item \LaTeX{}-broncode van de bachelorproef.
+  \item in te voegen afbeeldingen.
+  \item broncode van zelf geschreven scripts, benchmarks, experimenten, proof-of-concepts, enz. Dit maakt dat je experimenten makkelijker te reproduceren en te valideren zijn door derden.
+  \item ruwe resultaten experimenten (in tekstformaat, bv CSV), transcripties van interviews, enz.
+  \item losse nota's
+\end{itemize}
+
+Kortom, \emph{alle} artefacten die resulteren uit je onderzoek horen thuis in de repository. Voor werkdocumenten waar je opgemaakte tekst wenst, maar waarvoor \LaTeX{} overkill is gebruik je Markdown\footnote{\url{https://guides.github.com/features/mastering-markdown/}}.
+
+Wat hoort \emph{niet} thuis in je repository:
+
+\begin{itemize}
+  \item Hulpbestanden aangemaakt bij het compileren van \LaTeX{}. Je kan ervoor zorgen dat deze niet in een repository opgenomen worden door een \texttt{.gitignore}-bestand aan te maken\footnote{Bijvoorbeeld \url{https://github.com/github/gitignore/blob/master/TeX.gitignore}}. Het \LaTeX{}-sjabloon voor de bachelorproef is al goed ingesteld.
+  \item Grote (binaire) bestanden zoals ISO's, virtuele machines (bv. .ova), enz.
+  \item PDFs van de artikels/ebooks die je gelezen hebt (dit wordt beschouwd als ``herdistribueren'' en mag niet onder de auteurswetgeving).
+  \item Binaire bestanden die vaak veranderen
+  \item Bestanden die automatisch gegenereerd worden uit code in Git, bv. gecompileerde code.
+\end{itemize}
+
+Een versiebeheersysteem wordt pas echt nuttig als je het goed gebruikt. Commit dus zo vaak mogelijk, schrijf duidelijke commit-boodschappen en synchroniseer regelmatig met Github!
 
 \section{Samenvatting}
 \label{sec:voorbereiding-samenvatting}
