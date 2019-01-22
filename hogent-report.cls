@@ -16,11 +16,11 @@
 %   CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
 %===============================================================================
 
-\ProvidesClass{hogent-report}[2019/01/09 Bachelorproef HOGENT toegepaste informatica]
+\ProvidesClass{hogent-report}[2019/01/22 Bachelorproef HOGENT toegepaste informatica (Montserrat)]
 \NeedsTeXFormat{LaTeX2e}
 
 % Overerven van de ``book''-klasse
-\LoadClass[12pt,fleqn]{book}
+\LoadClass[11pt,fleqn]{book}
 
 %-------------------------------------------------------------------------------
 % Algemene vormgeving, pagina-indeling
@@ -32,7 +32,7 @@
 \setlength{\parindent}{0em} % Eerste regel niet inspringen
 \setlength{\parskip}{1em}   % Ruimte tussen paragrafen laten
 \RequirePackage{enumitem}   % Vormgeving lijsten aanpassen
-\setlist{nolistsep}         % Geen ruimte tussen elementen in een lijst
+%\setlist{nolistsep}         % Geen ruimte tussen elementen in een lijst
 
 \RequirePackage{booktabs}   % Mooier opgemaakte tabellen
 \RequirePackage{multirow}   % Cellen in tabellen samenvoegen
@@ -48,17 +48,20 @@
 % Lettertypes, bestandscodering
 %-------------------------------------------------------------------------------
 
-\RequirePackage[utf8]{inputenc}  % Accenten gebruiken in tekst (vb. é ipv \'e)
-\RequirePackage[T1]{fontenc}     % Gebruik modernere 8-bit fonts met 256 tekens
+\RequirePackage{fontspec}
+
+\setsansfont{Montserrat}[
+BoldFont={Montserrat ExtraBold},
+ItalicFont={Montserrat Italic},
+BoldItalicFont={Montserrat Bold Italic}
+]
+\setmathrm{Montserrat}
+\setmonofont{Fira Code}
+\setmainfont{Montserrat}
+
 \RequirePackage{amsfonts}        % AMS math packages: extra wiskundige
 \RequirePackage{amsmath}         %   symbolen (o.a. getallen-
 \RequirePackage{amssymb}         %   verzamelingen N, R, Z, Q, etc.)
-
-\RequirePackage{avant}           % Gebruik Avantgarde voor titels
-\RequirePackage{mathptmx}        % Gebruik Adobe Times Roman als basislettertype
-                                 % met ondersteuning voor wiskundige symbolen
-
-\RequirePackage{microtype}       % Verbeteringen voor typografische perfectie
 
 %-------------------------------------------------------------------------------
 % Taal, lokalisatie
