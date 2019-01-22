@@ -1,17 +1,15 @@
-\documentclass[11pt,fleqn,a4paper]{book}
+\documentclass{hogent-report}
+\usepackage{hogent-report-titlepage} % Voorpagina
 
-\input{structure}
-\include{data}
+\addbibresource{voorbeelden.bib}
 
-\newcommand{\acadj}{2017-2018}
-
-\author{Bert {Van Vreckem} \and Jens Buysse}
-\title{De bachelorproef informatica\\Een praktische gids}
-\date{Academiejaar \acadj}
+\author{Bert {Van Vreckem}, Jens Buysse}
+\title{De bachelorproef informatica: Een praktische gids}
+\date{\today}
 
 \begin{document}
 
-\thetitlepage
+\inserttitlepage[maincolor]
 
 %---------- Colofon -----------------------------------------------------------
 
@@ -19,11 +17,13 @@
 ~\vfill
 \thispagestyle{empty}
 
-\noindent Copyright \copyright\ 2016-2018 Bert Van Vreckem \& Jens Buysse\\ % Copyright notice
+\noindent Copyright \copyright\ 2016-2019 Bert Van Vreckem \& Jens Buysse % Copyright notice
 
-\noindent \textit{Dit werk valt onder de \href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons Naamsvermelding-GelijkDelen 4.0 Internationale Publieke Licentie}. De vormgeving is gebaseerd op ``\href{http://www.latextemplates.com/template/the-legrand-orange-book}{The Legrand Orange Book}'' door Mathias Legrand}\\
+\noindent \textit{Dit werk valt onder de \href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons Naamsvermelding-GelijkDelen 4.0 Internationale Publieke Licentie}. De vormgeving is gebaseerd op ``\href{http://www.latextemplates.com/template/the-legrand-orange-book}{The Legrand Orange Book}'' door Mathias Legrand}
 
 \noindent \textit{\today} % Printing/edition date
+
+\vspace{3cm}
 
 %---------- Inhoudstafel ------------------------------------------------------
 \usechapterimagefalse

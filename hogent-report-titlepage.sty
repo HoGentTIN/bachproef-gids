@@ -26,7 +26,7 @@
     % Marges proportioneel tov breedte logo
     \newgeometry{top=1.7cm,bottom=1.7cm,left=1.7cm,right=1.7cm}
     % Stel achtergrondkleur van de voorpagina in
-    \pagecolor{#1}\afterpage{\nopagecolor}
+    \pagecolor{#1}
     \begin{center}
       \begingroup
       \vspace*{3cm}
@@ -40,6 +40,7 @@
     % HOGENT logo komt onderaan rechts
     \hfill\includegraphics[width=3cm]{HOGENT_Logo_Neg_rgb.png}
     \restoregeometry
+    \pagecolor{white}
   \end{titlepage}
 }
 
