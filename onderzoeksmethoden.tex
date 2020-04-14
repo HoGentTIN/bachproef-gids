@@ -66,48 +66,67 @@ Dan zoek je \emph{zoveel mogelijk} alternatieven die in aanmerking komen om gebr
 \subsection{Short list en proof-of-concept}
 \label{ssec:short-list-poc}
 
- De meest veelbelovende alternatieven weerhoud je voor de volgende fase. De alternatieven in deze \emph{short list} ga je in meer detail bespreken en verder tegenover elkaar afwegen. Zet eventueel een \emph{proof-of-concept} op, waarin je één of enkele van de meest veelbelovende alternatieven uitprobeert aan de hand van eenzelfde vastgelegd \emph{scenario} waarin je de requirements die je nog niet hebt kunnen verifiëren aan bod laat komen.
+ De meest veelbelovende alternatieven weerhoud je voor de volgende fase. De alternatieven in deze \emph{short list} ga je in meer detail bespreken en verder tegenover elkaar afwegen. Zet eventueel een \emph{proof-of-concept} op (zie Sectie \ref{sec:poc-testopstelling}), waarin je één of enkele van de meest veelbelovende alternatieven uitprobeert aan de hand van eenzelfde vastgelegd \emph{scenario} waarin je de requirements die je nog niet hebt kunnen verifiëren aan bod laat komen.
 
 \subsection{Conclusie}
 \label{ssec:vgl-studie-conclusie}
 
 Tenslotte geef je je \emph{aanbeveling}, het alternatief dat het beste aansluit bij de requirements, en wat eventueel nog moet gedaan worden om het nog beter geschikt te maken.
 
-\section{Experimenten opzetten}
-\label{sec:experimenten-opzetten}
-Reproduceerbaarheid is een van de pijlers van wetenschappelijk onderzoek. Dat betekent dat een experiment moet kunnen worden herhaald en dan dezelfde resultaten moet opleveren. Denk hierbij aan twee eigenschappen waaraan uw experiment moet voldoen:
+\section{Proof-of-concept of testopstelling}
+\label{sec:poc-testopstelling}
 
-\begin{enumerate}
-	\item Reproduceerbaarheid: in staat zijn om een experiment te herhalen zoals het werd uitgevoerd, bijvoorbeeld door data opnieuw te analyseren.
-	\item Replicabiliteit: een experiment vanaf het begin kunnen herhalen.
-	\item Herbruikbaarheid: het proces toepassen op een nieuwe maar soortgelijke vraag. Bijvoorbeeld voor een data analyse, toegepast op nieuwe gegevens.
-\end{enumerate}
+Met een proof-of-concept of testopstelling wil je aantonen dat een voorgestelde of veelbelovende oplossing voor de onderzoeksvraag ook realiseerbaar is in de praktijk. Vaak is het nodig verschillende varianten naast elkaar op te zetten, zodat je nog onderling kan vergelijken.
 
-Een aantal tips om uw software experimenten goed te structuren zodat ze aan bovenstaande eigenschappen voldoen.
+Een goede testopstelling voldoet aan drie eigenschappen \autocite{Liberman2015}:
 
 \begin{description}
-	\item[Docker, containers en virtual machines] Je kan dergelijke technologieën gebruiken om uw experimenten in te laten draaien. Zo zijn uw experimenten repliceerbaar.
-	\item[Version control] Versiecontrole : als het wordt gebruikt met regelmatige commits, kan je terugkeren naar elk moment in de tijd. Dit is een cruciaal aspect  om te reproduceren wat je al een tijdje geleden hebt gedaan.
-	
-	Hint: gebruik een 'tag' om een positie in de geschiedenis die je wilt herhalen, te pinpointen.
-	\item[Library] Maak van uw experiment een software library. Op die manier worden ook de analysestappen herbruikbaar gemaakt en is replicatie makkelijker. 
-	\item[Open datasets] Maak uw datasets die je gebruikt hebt beschikbaar en open. Ze definiëren ook een standaard experiment, waardoor een bredere wetenschappelijke gemeenschap de vragen begrijpt die je onderzoekt.
+  \item[Reproduceerbaarheid] in staat zijn om de testopstelling opnieuw op te zetten (eventueel door een onafhankelijke partij) en de analyse opnieuw uit te voeren zodat je kan verifiëren dat je gelijkaardige resultaten krijgt.
+  \item[Repliceerbaarheid] lijkt op het voorgaande, maar is sterker uitgedrukt: bij een repliceerbare testopstelling is het mogelijk dat een onafhankelijke partij deze \textit{exact} opnieuw kan opzetten en dezelfde resultaten zal bekomen.
+  \item[Herbruikbaarheid] varianten kunnen opzetten van de testomgeving zodat deze onderling kunnen vergeleken worden.
 \end{description}
 
+De beste manier om dit te bereiken is door het proces te automatiseren.
 
-% TODO
-% Belangrijk: reproduceerbaar aan de hand van de beschrijving
-% => voldoende detail om te kunnen nabootsen
-% Gebruikte hardware, software
-% Procedure opzetten testomgeving (afbeelding!)
+\subsection{Reproduceerbaarheid}
+\label{ssec:reproduceerbaarheid}
 
-\section{Cijfermateriaal rapporteren}
-\label{sec:cijfermateriaal}
-Dit onderdeel van de gids is nog onder constructie. We refereren u daarvoor naar de cursus onderzoekstechnieken.
-% TODO
-% vb. performantievergelijking
+Een minimumverwachting van de tekst van een bachelorproef is dat de lezer in staat moet zijn om aan de hand van de beschrijving de testopstelling te reproduceren en je conclusies moet kunnen verifiëren. Dat betekent ook dat je beschrijving voldoende gedetailleerd moet zijn. Geef aan het begin van deze sectie in je tekst een duidelijke afbeelding met een schema van de opgezette testomgeving. Beschrijf vervolgens in detail:
+
+\begin{itemize}
+  \item Welke hardware werd er gebruikt? Computers, netwerkapparatuur, andere ict-infrastructuur. Welke specificaties hebben deze apparaten (CPU, geheugen, type en grootte harde schijven, snelheid netwerkinterfaces, enz.)?
+  \item Welke softwarepakketten zijn er geïnstalleerd die relevant zijn voor de testopstelling? Welke specifieke edities en/of versienummers?
+  \item Hoe is de installatieprocedure precies verlopen? Welke instellingen zijn er aangepast, en hoe zijn alle componenten geconfigureerd?
+\end{itemize}
+
+\subsection{Repliceerbaarheid}
+\label{ssec:repliceerbaarheid}
+
+Het is zowel voor jezelf als voor de lezer van je bachelorproef belangrijk om het opzetten van de testomgeving zo veel mogelijk te automatiseren, bijvoorbeeld door het schrijven van een installatiescript. Op deze manier bereik je de \textit{repliceerbaarheid} van je testopstelling.
+
+Voor veel situaties kan je een proof-of-concept uitwerken met virtuele machines. Op die manier creëer je een afgeschermde omgeving zonder dat je extra software moet installeren op je fysieke systeem. Vagrant\footnote{\url{https://www.vagrantup.com/}} is een interessante tool om reproduceerbare virtuele testomgevingen volledig geautomatiseerd op te zetten. Het is zelf geen virtualisatiesysteem, maar het spreekt VirtualBox, VMWare of Hyper-V aan vanop de command-line. Je beschrijft in een configuratiebestand (\texttt{Vagrantfile}) welke VMs je nodig hebt, met hoeveel processorkernen/geheugen/schijfruimte, met welk besturingssysteem, enz. Via een script of configuration management system (zoals Ansible) kan je de precieze configuratie van de VMs beschrijven (installatie software, gebruikers, netwerkservices, configuratiebestanden, enz.). De code/configuratie om een Va\-grant-\-omgeving op te zetten is erg compact, volledig tekstgebaseerd en kan dus worden bijgehouden in een versiebeheersysteem.
+
+Ook Docker\footnote{\url{https://docker.com/}} is een interessante tool hiervoor. Docker is een vorm van zgn.~containervirtualisatie. Virtuele machines (containers) hebben geen eigen OS, maar bevatten in principe enkel een applicatie. Het OS van het fysieke systeem wordt hergebruikt door de containers. Dat maakt dat containers een stuk efficiënter zijn qua schijf- en geheugengebruik voor het fysieke systeem. Er zijn echter een aantal beperkingen waardoor Docker niet altijd bruikbaar is als platform voor een testopstelling.
+
+Als je merkt dat je een fout gemaakt hebt in de configuratie van je testopstelling, dan kan je het installatiescript aanpassen en de gehele testomgeving opnieuw opzetten. Als je dit manueel zou moeten doen, ben je wellicht minstens een dag kwijt. Bovendien heb je de kans dat je een kleinigheid over het hoofd ziet en dus niet in staat bent de testomgeving opnieuw exact te replicerne. Het initialiseren van een Linux-VM met Vagrant of Docker duurt typisch slechts enkele minuten. Windows-systemen nemen een stuk meer tijd in beslag. Het OS is op zich al een stuk groter\footnote{Ca.~4GB voor Windows Server Core tegenover 256 à 512MB voor een minimale installatie van een Linux distributie. Installatie van applicaties hebben nog een bijkomende impact op de schijfgrootte van de VM.}
+
+Een uitgebreide handleiding van Vagrant of Docker valt buiten het bereik van deze gids. Een voorbeeld ter illustratie is te vinden op \url{https://github.com/bertvv/lampstack}. Hier wordt een Apache webserver opgezet met een MariaDB databank, PHPMyAdmin, en Wordpress.
+
+\subsection{Herbruikbaarheid}
+\label{ssec:herbruikbaarheid}
+
+Door het gehele proces te automatiseren creëer je een bijkomend voordeel: het is een stuk makkelijker om gelijkaardige varianten van een testopstelling te creëren. Stel dat je de performantie-impact van een cache op een databasesysteem wil meten. De installatie van beide varianten (met/zonder cache) zijn zeer gelijkaardig. In een Vagant-omgeving kan je 2 VMs creëren, met hetzelfde installatiescript voor de basisopstelling, en een apart script om de verschillende configuratie-varianten te realiseren.
+
+\section{Experimenten uitvoeren en verzamelen van kwantitatieve data}
+\label{sec:experimenten-uitvoeren}
+
+Wanneer je een experiment opzet waarbij je kwantitatieve data gaat verzamelen, bijvoorbeeld voor een performantievergelijking, gelden dezelfde richtlijnen als bij een proof-of-concept: het is belangrijk dat die reproduceerbaar, repliceerbaar en herbruikbaar is. Wellicht start je vanaf een vooraf gedefinieerde testopstelling, en ga je herhaaldelijk eenzelfde handeling uitvoeren en metingen doen.
+
+Ook hier is het belangrijk het uitvoeren van het experiment en het opslaan van testresultaten te automatiseren, bijvoorbeeld aan de hand van een shell-script. Als je een experiment manueel moet uitvoeren, wordt dit al snel een erg tijdrovende bezigheid. Stel je voor dat je telkens je het experiment wil uitvoeren op een knop moet drukken, ongeveer vijf à tien minuten moet wachten en dan de uitvoer naar Excel moet kopiëren en plakken en dan het rekenblad nog eens moet bewerken zodat je enkel de cijfers overhoudt om statistisch te verwerken. Deze werkwijze is onhoudbaar. Je moet immers voortdurend aanwezig en aandachtig blijven tijdens het uitvoeren. Bij elke manuele handeling is er bovendien een kans op het maken van fouten.
+
+Een script dat het experiment in verschillende varianten kan uitvoeren zonder interactie door de gebruiker, en ook meteen de resultaten kan opslaan in een geschikt bestandsformaat bespaart je enorm veel tijd. Je kan het experiment 's nachts laten draaien en op die manier kan je het ook voldoende herhalen om statistisch bruikbare resultaten te bekomen. Als een experiment mislukt, volstaat het om het script te verbeteren en het opnieuw uit te voeren. Het is ook makkelijker om verschillende varianten te schrijven (zoals het eerdere voorbeeld van database-queries met of zonder cache).
+
+% TODO:
 % - vergelijk je de juiste dingen? Zijn neveneffecten uitgeschakeld?
 % - Experimenten vele keren herhalen
-% - Enkel gemiddeldes vermelden is onvoldoende! Minstens ook standaardafwijkingen geven en statistische toetsen uitvoeren om te verifiëren of resultaten significant verschillen.
-
 
