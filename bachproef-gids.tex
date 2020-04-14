@@ -1,15 +1,23 @@
- \documentclass{hogent-report}
-\usepackage{hogent-report-titlepage} % Voorpagina
+\documentclass[dutch,fbo,report]{hogentreport}
+
+%\usepackage{hogent-report-titlepage} % Voorpagina
+
+\usepackage{subcaption}
+
+\graphicspath{{img/}}
 
 \addbibresource{voorbeelden.bib}
+\addbibresource{referenties.bib}
 
 \author{Bert {Van Vreckem}, Jens Buysse}
-\title{De bachelorproef informatica: Een praktische gids}
-\date{\today}
+\title[Een praktische gids]{De bachelorproef informatica}
+\academicyear{2019-2020}
 
 \begin{document}
 
-\inserttitlepage[maincolor]
+%\inserttitlepage[maincolor]
+
+\maketitle
 
 %---------- Colofon -----------------------------------------------------------
 
@@ -17,20 +25,20 @@
 ~\vfill
 \thispagestyle{empty}
 
-\noindent Copyright \copyright\ 2016-2019 Bert Van Vreckem \& Jens Buysse % Copyright notice
+\noindent Copyright \copyright\ 2016-2020 Bert Van Vreckem \& Jens Buysse % Copyright notice
 
-\noindent \textit{Dit werk valt onder de \href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons Naamsvermelding-GelijkDelen 4.0 Internationale Publieke Licentie}. De vormgeving is gebaseerd op ``\href{http://www.latextemplates.com/template/the-legrand-orange-book}{The Legrand Orange Book}'' door Mathias Legrand}
+\noindent \textit{Dit werk valt onder de \href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons Naamsvermelding-GelijkDelen 4.0 Internationale Publieke Licentie}. De vormgeving is gebaseerd op Pieter van der Kloet's \href{https://github.com/pvdk/hogent-latex-thesis}{thesis-sjabloon voor HOGENT}.}
 
 \noindent \textit{\today} % Printing/edition date
 
 \vspace{3cm}
 
 %---------- Inhoudstafel ------------------------------------------------------
-\usechapterimagefalse
+%\usechapterimagefalse
 
 \tableofcontents % Print the table of contents itself
 
-\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+%\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
 
 %---------- Corpus ------------------------------------------------------------
 
@@ -39,6 +47,7 @@
 \include{onderwerp}
 \include{literatuuronderzoek}
 \include{onderzoeksmethoden}
+\include{resultaten-rapporteren}
 \include{schrijven}
 
 
@@ -47,7 +56,7 @@
 % in voorbeeld.bib moeten in het veld ``keywords'' ook de term ``voorbeeld''
 % bevatten.
 \printbibliography[notkeyword=voorbeeld]
-\addcontentsline{toc}{chapter}{\textcolor{maincolor}{\IfLanguageName{dutch}{Bibliografie}{Bibliography}}}
+\addcontentsline{toc}{chapter}{\textcolor{title}{\IfLanguageName{dutch}{Bibliografie}{Bibliography}}}
 
 \end{document}
 
