@@ -1,5 +1,7 @@
 # Praktische gids bachelorproef
 
+**De inhoud van deze repo wordt niet meer onderhouden. De inhoud is verwerkt in de syllabus van de cursus Research Methods**
+
 Dit is een praktische gids die je hopelijk kan helpen bij de aanpak van het schrijven van de bachelorproef toegepaste informatica.
 
 De gids is opgemaakt met LaTeX, in een sjabloon dat (op de voorpagina na) overeen komt met het te gebruiken sjabloon voor je bachelorproef zelf. Je kan de broncode gebruiken als een voorbeeld.
